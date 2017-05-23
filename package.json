@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "node-sass -w -o ./dev/css  ./src/scss",
-    "babel": "babel --presets babel-preset-latest -w ./src/js/ -d ./dev/js/"
+    "babel": "babel --presets babel-preset-latest -w ./src/js/ -d ./dev/js/",
+    "pug": "pug -w -P -p ./src/pug/partials/ -O ./src/pug/options.json ./src/pug/templates/ -o ./dev/"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,8 @@
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-preset-latest": "^6.24.1",
-    "node-sass": "^4.5.3"
+    "node-sass": "^4.5.3",
+    "pug": "^2.0.0-rc.1",
+    "pug-cli": "^1.0.0-alpha6"
   }
 }
