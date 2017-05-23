@@ -1,0 +1,19 @@
+{
+  "name": "shinworkflow",
+  "version": "0.1.0",
+  "description": "Boilerplate de páginas web usando npm scripts ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass -w -o ./dev/css  ./src/scss"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShinFDuran/shinworkflow.git"
+  },
+  "author": "Francisco Durán <franciscodurannavarro@hotmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/ShinFDuran/shinworkflow#readme",
+  "devDependencies": {
+    "node-sass": "^4.5.3"
+  }
+}
