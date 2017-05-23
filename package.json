@@ -4,7 +4,8 @@
   "description": "Boilerplate de páginas web usando npm scripts ",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "node-sass -w -o ./dev/css  ./src/scss"
+    "sass": "node-sass -w -o ./dev/css  ./src/scss",
+    "babel": "babel --presets babel-preset-latest -w ./src/js/ -d ./dev/js/"
   },
   "repository": {
     "type": "git",
@@ -14,6 +15,8 @@
   "license": "MIT",
   "homepage": "https://github.com/ShinFDuran/shinworkflow#readme",
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
     "node-sass": "^4.5.3"
   }
 }
