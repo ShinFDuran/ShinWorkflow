@@ -6,7 +6,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "node-sass -w -o ./dev/css  ./src/scss",
     "babel": "babel --presets babel-preset-latest -w ./src/js/ -d ./dev/js/",
-    "pug": "pug -w -P -p ./src/pug/partials/ -O ./src/pug/options.json ./src/pug/templates/ -o ./dev/"
+    "pug": "pug -w -P -p ./src/pug/partials/ -O ./src/pug/options.json ./src/pug/templates/ -o ./dev/",
+    "watch:metalang": "parallelshell \"npm run sass\" \"npm run pug\" \"npm run babel\"",
+    "dev:serve": "browser-sync start --files dev --reload-delay=300 --reload-debounce=500 --server dev",
+    "start": "parallelshell \"npm run dev:serve\" \"npm run watch:metalang\""
   },
   "repository": {
     "type": "git",
@@ -18,8 +21,10 @@
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-preset-latest": "^6.24.1",
+    "browser-sync": "^2.18.12",
     "node-sass": "^4.5.3",
-    "pug": "^2.0.0-rc.1",
-    "pug-cli": "^1.0.0-alpha6"
+    "parallelshell": "^2.0.0",
+    "pug-cli": "^1.0.0-alpha6",
+    "pug": "^2.0.0-rc.1"
   }
 }
