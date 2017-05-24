@@ -3,13 +3,17 @@
   "version": "0.1.0",
   "description": "Boilerplate de páginas web usando npm scripts ",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "node-sass -w -o ./dev/css  ./src/scss",
     "babel": "babel --presets babel-preset-latest -w ./src/js/ -d ./dev/js/",
     "pug": "pug -w -P -p ./src/pug/partials/ -O ./src/pug/options.json ./src/pug/templates/ -o ./dev/",
     "watch:metalang": "parallelshell \"npm run sass\" \"npm run pug\" \"npm run babel\"",
-    "dev:serve": "browser-sync start --files dev --reload-delay=300 --reload-debounce=500 --server dev",
-    "start": "parallelshell \"npm run dev:serve\" \"npm run watch:metalang\""
+    "dev:server": "browser-sync start --files dev --reload-delay=300 --reload-debounce=500 --server dev",
+    "dev:full": "parallelshell \"npm run dev:serve\" \"npm run watch:metalang\"",
+    "dist:clean": "rimraf ./dist/*",
+    "dist:folders": "mkdirp ./dist/css ./dist/js ./dist/img",
+    "dist:htmlmin": "html-minifier --html5 --remove-comments --collapse-whitespace --input-dir ./dev/ --output-dir ./dist/",
+    "dist:build": "npm run dist:clean && npm run dist:folders && npm run dist:htmlmin",
+    "start": "npm run dev:full"
   },
   "repository": {
     "type": "git",
@@ -22,9 +26,12 @@
     "babel-cli": "^6.24.1",
     "babel-preset-latest": "^6.24.1",
     "browser-sync": "^2.18.12",
+    "html-minifier": "^3.5.1",
+    "mkdirp": "^0.5.1",
     "node-sass": "^4.5.3",
     "parallelshell": "^2.0.0",
+    "pug": "^2.0.0-rc.1",
     "pug-cli": "^1.0.0-alpha6",
-    "pug": "^2.0.0-rc.1"
+    "rimraf": "^2.6.1"
   }
 }
