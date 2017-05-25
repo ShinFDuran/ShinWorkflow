@@ -14,3 +14,9 @@ Inicialmente la estructura es la siguiente:
   - \dev\ Carpeta donde se generan los archivos para poder cargarlos en el navegador durante el desarrollo
   - \dist\ Carpeta donde se generarán los archivos finales minificados y compactados
 
+## Package
+- Para facilitar su comprensión en package.json uso nombres que faciliten la fase.
+- Utilizo sass, babel y pug como script temporales que forman parte de watch:metalang.
+- A partir de ahí *dev:XX* para la build de desarrollo y *dist:XX* para la build de producción.
+- Usaré el script *start* para el script más utilizado (el que prepara el servidor en desarrollo).
+- La build de producción se hace a partir de la de desarrollo, de momento es necesario haber trabajado en desarrollo para poder crear una build de producción.
